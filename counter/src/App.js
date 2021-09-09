@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 
-import Counter from './Counter'
-import Albums from './Albums'
+import Counter from './pages/Counte'
+import Albums from './pages/Albums'
+import Users from './pages/Users'
+import Template from './templates/Template'
 
 const pages = {
   Albums:{
@@ -11,6 +13,10 @@ const pages = {
   Counter:{
     text:"Contador",
     component: Counter,
+  },
+  Users:{
+    text:"Usuarios",
+    component: Users,
   }
 }
 
@@ -22,18 +28,11 @@ function App() {
   }
   
   const Page = pages[page].component
-
-  const pagesNames = Object.keys(pages)
   
   return (
-    <>
-    {
-      pagesNames.map((page) => <button onClick = {
-        ()=>{handleOnChange(page)}
-      }>{pages[page].text}</button> )
-    }
+    <Template pages={pages} activePage={page} onChangePage={handleOnChange}>
     {Page && <Page />}
-    </>
+    </Template>
   )
 }
 

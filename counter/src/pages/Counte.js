@@ -9,11 +9,13 @@ const Counter =  () => {
   }
   
   return(
-    <div className ="counter">
-      <span>{contador}</span>
-      <button onClick={()=>handleClick('-')}>-</button>
-      <button onClick={()=>handleClick('+')}>+</button>
-    </div>
+    <>
+      <div className ="counter">
+        <span>{contador}</span>
+        <button onClick={()=>handleClick('-')}>-</button>
+        <button onClick={()=>handleClick('+')}>+</button>
+      </div>
+    </>
   )
 
 }
