@@ -22,7 +22,7 @@ const Header = ()=>{
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Project One
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
