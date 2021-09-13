@@ -10,8 +10,8 @@ import TemplatePage from './template/TemplatePage.js'
 
 function App() {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
           <Route path="/Costumers">
             <TemplatePage title="Clientes" Component = {Costumers} />
@@ -22,8 +22,8 @@ function App() {
             {/* <Home /> */}
           </Route>
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   )
 }
 
