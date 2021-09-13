@@ -5,6 +5,7 @@ import{
 } from 'react-router-dom'
 import Home from './pages/Home'
 import Costumers from './pages/Costumers'
+import CostumersAdd from './pages/CostumersAdd'
 import TemplateDefault from './template/Default'
 import TemplatePage from './template/TemplatePage.js'
 
@@ -13,6 +14,10 @@ function App() {
     <Router>
       <TemplateDefault>
         <Switch>
+          <Route path="/Costumers/add">
+            <TemplatePage title="Adicionar Clientes" Component = {CostumersAdd} />
+            {/* <Costumers /> */}
+          </Route>
           <Route path="/Costumers">
             <TemplatePage title="Clientes" Component = {Costumers} />
             {/* <Costumers /> */}

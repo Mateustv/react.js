@@ -15,6 +15,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/Home'
 import GroupIcon from '@material-ui/icons/Group'
+import GroupAddIcon from '@material-ui/icons/GroupAdd'
 
 import useStyles from './Header.style'
 
@@ -51,6 +52,7 @@ const Header = ()=>{
       
       <Drawer open={openMenu} onClose ={()=> handleToggleMenu() }>
         <List>
+          
           <ListItem button onClick={()=>{handleClick('/')}}>
             <ListItemIcon>
               <HomeIcon></HomeIcon>
@@ -59,6 +61,7 @@ const Header = ()=>{
               Home
             </ListItemText>
           </ListItem>
+          
           <ListItem button onClick={()=>{handleClick('/Costumers')}}>
             <ListItemIcon>
               <GroupIcon></GroupIcon>
@@ -67,6 +70,16 @@ const Header = ()=>{
               Lista De Clientes
             </ListItemText>
           </ListItem>
+
+          <ListItem button onClick={()=>{handleClick('/Costumers/add')}}>
+            <ListItemIcon>
+              <GroupAddIcon></GroupAddIcon>
+            </ListItemIcon>
+            <ListItemText>
+              Adicionar Clientes
+            </ListItemText>
+          </ListItem>
+        
         </List>
       </Drawer>
     </div>
