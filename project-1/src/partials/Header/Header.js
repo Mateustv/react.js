@@ -16,6 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/Home'
 import GroupIcon from '@material-ui/icons/Group'
 import GroupAddIcon from '@material-ui/icons/GroupAdd'
+import NotesIcon from '@material-ui/icons/Notes'
 
 import useStyles from './Header.style'
 
@@ -77,6 +78,15 @@ const Header = ()=>{
             </ListItemIcon>
             <ListItemText>
               Adicionar Clientes
+            </ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={()=>{handleClick('/Costumers/adde')}}>
+            <ListItemIcon>
+              <NotesIcon></NotesIcon>
+            </ListItemIcon>
+            <ListItemText>
+              Exercicio
             </ListItemText>
           </ListItem>
         

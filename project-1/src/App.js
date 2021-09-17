@@ -8,12 +8,16 @@ import Costumers from './pages/Costumers'
 import CostumersAdd from './pages/CostumersAdd'
 import TemplateDefault from './template/Default'
 import TemplatePage from './template/TemplatePage.js'
+import CostumersExer from './pages/CostumersExer'
 
 function App() {
   return (
     <Router>
       <TemplateDefault>
         <Switch>
+          <Route path="/Costumers/adde">
+            <TemplatePage title="Exercicio" Component = {CostumersExer} />
+          </Route>
           <Route path="/Costumers/add">
             <TemplatePage title="Adicionar Clientes" Component = {CostumersAdd} />
             {/* <Costumers /> */}

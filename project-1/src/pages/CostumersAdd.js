@@ -10,28 +10,26 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(3), 
     }
   }))
+ 
+  
+const CostumersAdd = () => {
+    const classe = useStyles()
+    
+    const [form, setForm] = useState({
+        name : {
+            value : '',
+            error : false,
+            helperText: '',
+        },
+        job : {
+            value : '',
+            error : false,
+            helperText: '',
+        },
+    })
+    
 
-  
-  
-  
-  const CostumersAdd = () => {
-      const classe = useStyles()
-      
-      const [form, setForm] = useState({
-          name : {
-              value : '',
-              error : false,
-              helperText: '',
-          },
-          job : {
-              value : '',
-              error : false,
-              helperText: '',
-          },
-      })
-      
-
-      const handleChange = (state) => {
+    const handleChange = (state) => {
         const {name, value} = state.target
 
         setForm({
@@ -40,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
                 value,
             },
         })
-      }
+    }
 
-      const handleClick = () => {
+    const handleClick = () => {
         let hasError = false
         
         let setFormChange = {
@@ -77,31 +75,31 @@ const useStyles = makeStyles((theme) => ({
             nome:form.nome.value,
             job:form.job.value,
         }).then((response) => {console.log(response)})
-      }
-    
+    }
+
     return (
         <div>
             <div className = {classe.margins}>
                 <TextField 
-                 error ={form.name.error}
-                 helperText={form.name.error ? form.name.helperText : ''}
-                 id="outlined-basic"
-                 label="Digite seu nome"
-                 variant="outlined" 
-                 name="name" value={form.name.value} 
-                 onChange={handleChange}
+                    error ={form.name.error}
+                    helperText={form.name.error ? form.name.helperText : ''}
+                    id="outlined-basic"
+                    label="Digite seu nome"
+                    variant="outlined" 
+                    name="name" value={form.name.value} 
+                    onChange={handleChange}
                 />
             </div>
 
             <div className = {classe.margins}>
                 <TextField 
-                 error ={form.job.error}
-                 helperText={form.job.error ? form.job.helperText : ''}
-                 id="outlined-basic"
-                 label="Digite seu Cargo"
-                 variant="outlined" name= "job"
-                 value={form.job.value} 
-                 onChange={handleChange}
+                    error ={form.job.error}
+                    helperText={form.job.error ? form.job.helperText : ''}
+                    id="outlined-basic"
+                    label="Digite seu Cargo"
+                    variant="outlined" name= "job"
+                    value={form.job.value} 
+                    onChange={handleChange}
                 />
             </div>
 
