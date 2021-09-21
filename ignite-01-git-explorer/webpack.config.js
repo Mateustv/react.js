@@ -1,5 +1,6 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const reactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'development'
 
@@ -19,20 +20,29 @@ module.exports = {
             directory: path.join(__dirname, 'public'),
             watch: true,
           },
+          hot : true,
           
         // contentBase: path.resolve(__dirname, 'public'),
     },
     plugins:[
+        isDevelopment && new reactRefreshWebpackPlugin(),
         new htmlWebpackPlugin ({
             template: path.join(__dirname,'public', 'index.html'),
         })
-    ],
+    ].filter(Boolean),
     module:{
         rules: [
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
-                use:'babel-loader',
+                use:{
+                    loader: 'babel-loader',
+                    options: {
+                        plugins:[
+                            isDevelopment && require.resolve('react-refresh/babel')
+                        ].filter(Boolean),
+                    }
+                },
             },
             {
                 test: /\.scss$/,
